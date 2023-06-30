@@ -5,6 +5,7 @@ interface Document {
 
 export interface Character extends Document {
   planet: string;
+  testString: string;
 }
 
 export interface Planet extends Document {
@@ -24,62 +25,54 @@ export interface Species extends Document {
 export const data = {
   characters: [
     {
-      id: '1',
+      id: "1",
       createdAt: 1648496565147,
-      name: 'Luke Skywalker',
-      planet: 'Tatooine',
+      name: "Luke Skywalker",
+      planet: "Tatooine",
+      testString: "test123",
     },
     {
-      id: '2',
+      id: "2",
       createdAt: 1648496565147,
-      name: 'Han Solo',
-      planet: 'Corellia',
+      name: "Han Solo",
+      planet: "Corellia",
+      testString: "test234",
     },
   ],
   planets: [
     {
-      id: '3',
+      id: "3",
       createdAt: 1648496565147,
-      name: 'Tatooine',
-      climate: 'Arid',
+      name: "Tatooine",
+      climate: "Arid",
       surface: {
-        name: 'Desert',
-        features: [
-          'Sand',
-          'Rocks',
-        ],
+        name: "Desert",
+        features: ["Sand", "Rocks"],
       },
     },
     {
-      id: '4',
+      id: "4",
       createdAt: 1648496565147,
-      name: 'Corellia',
-      climate: 'Temperate',
+      name: "Corellia",
+      climate: "Temperate",
       surface: {
-        name: 'Forest',
-        features: [
-          'Trees',
-          'Soil',
-        ],
+        name: "Forest",
+        features: ["Trees", "Soil"],
       },
     },
   ],
   species: [
     {
-      id: '5',
+      id: "5",
       createdAt: 1648496565147,
-      name: 'Human',
+      name: "Human",
       metadata: {
         speed: {
           max: 8,
           min: 3,
         },
       },
-      planets: [
-        'Tatooine',
-        'Corellia',
-        'Naboo',
-      ],
+      planets: ["Tatooine", "Corellia", "Naboo"],
     },
   ],
 };
@@ -88,7 +81,7 @@ export class Collection<T extends Document> {
   data: T[];
 
   constructor(data: T[]) {
-    this.data = [ ...data ];
+    this.data = [...data];
   }
 
   findById(id: string) {
@@ -114,7 +107,7 @@ export class Collection<T extends Document> {
   updateById(id: string, update: Partial<T>) {
     const index = this.data.map((doc) => doc.id).indexOf(id);
 
-    if (typeof index === 'undefined') {
+    if (typeof index === "undefined") {
       throw new Error(`Item ${id} not found.`);
     }
 

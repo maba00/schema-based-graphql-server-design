@@ -1,6 +1,6 @@
-import { gql } from 'apollo-server';
+import { gql } from "apollo-server";
 
-import { Resolvers } from '../types.codegen';
+import { Resolvers } from "../types.codegen";
 
 const typeDefs = gql`
   type Character {

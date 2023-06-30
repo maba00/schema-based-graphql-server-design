@@ -28,6 +28,7 @@
   "author": "Jared Gorski <jaredgorski6@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@apollo/server-plugin-landing-page-graphql-playground": "^4.0.1",
     "@graphql-tools/schema": "^8.3.5",
     "@graphql-tools/utils": "^8.6.5",
     "apollo-server": "^3.6.6",
